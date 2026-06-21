@@ -70,16 +70,20 @@ Code snippetTotal Profit =
 
  Code snippetProfit Margin = DIVIDE([Total Profit], [Total Revenue], 0)
  
-5. Return Rate
+6. Return Rate
 
  Monitors supply chain quality and potential customer dissatisfaction by comparing items returned against total items sold.
  
-Code snippetReturn Rate = 
-DIVIDE(
+
+Return Rate = DIVIDE(
     SUM('Return_Data'[return_quantity]), 
     SUM('Transaction_Data'[quantity]), 
     0
 )
+
+
+
+
 🚀 Business ImpactDeploying this BI solution enables Maven Market to pivot toward a proactive, data-first corporate strategy:
 Mitigation of Revenue Leakage:
 By setting automated data thresholds on the Return Rate metric, procurement teams can instantly flag faulty vendor batches and renegotiate or terminate underperforming product supply agreements.
