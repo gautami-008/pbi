@@ -58,4 +58,6 @@ Mitigation of Revenue Leakage:
 By setting automated data thresholds on the Return Rate metric, procurement teams can instantly flag faulty vendor batches and renegotiate or terminate underperforming product supply agreements.
 Optimized Operational Overhead: Store managers can optimize floor layout and inventory stock based on Transactions by Store Type, ensuring high-demand items are allocated to retail formats that move them fastest.
 Targeted Regional Expansion: Corporate planners can leverage the geographic performance map to identify lucrative demographic pockets, reducing the financial risk associated with opening new brick-and-mortar storefronts.
+
+
 https://github.com/gautami-008/pbi/blob/main/mavan%20ss.png
