@@ -49,17 +49,17 @@ To move past basic data aggregation, the model leverages specialized Data Analys
  Calculates gross sales revenue by iterating through transactional quantities and matching them with individual retail prices.
 Code snippetTotal
 
-   Revenue = 
-SUMX(
+
+    Revenue = SUMX(
     'Transaction_Data', 
     'Transaction_Data'[quantity] * RELATED('Products'[product_price])
 )
 
 4. Total Profit
  Determines net product earnings by taking the gross revenue and subtracting the underlying product wholesale cost.
-Code snippetTotal Profit = 
 
-[Total Revenue] = SUMX(
+
+Total Profit = [Total Revenue] - SUMX(
     'Transaction_Data', 
     'Transaction_Data'[quantity] * RELATED('Products'[product_cost])
 )
@@ -68,7 +68,8 @@ Code snippetTotal Profit =
 
     Normalizes profitability, allowing direct performance comparison between small local grocery branches and massive regional supermarkets.
 
- Code snippetProfit Margin = DIVIDE([Total Profit], [Total Revenue], 0)
+
+Profit Margin = DIVIDE([Total Profit], [Total Revenue], 0)
  
 6. Return Rate
 
@@ -85,8 +86,13 @@ Return Rate = DIVIDE(
 
 
 🚀 Business ImpactDeploying this BI solution enables Maven Market to pivot toward a proactive, data-first corporate strategy:
+
+
+
 Mitigation of Revenue Leakage:
 By setting automated data thresholds on the Return Rate metric, procurement teams can instantly flag faulty vendor batches and renegotiate or terminate underperforming product supply agreements.
+
+
 Optimized Operational Overhead: Store managers can optimize floor layout and inventory stock based on Transactions by Store Type, ensuring high-demand items are allocated to retail formats that move them fastest.
 Targeted Regional Expansion: Corporate planners can leverage the geographic performance map to identify lucrative demographic pockets, reducing the financial risk associated with opening new brick-and-mortar storefronts.
 
