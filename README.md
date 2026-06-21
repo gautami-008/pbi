@@ -41,13 +41,13 @@ To move past basic data aggregation, the model leverages specialized Data Analys
 
 1. Total Transactions
  Tracks the baseline checkout velocity across all retail locations.
- Code snippetTotal
+ 
 
  Transactions = COUNTROWS('Transaction_Data')
 
 2. Total Revenue
  Calculates gross sales revenue by iterating through transactional quantities and matching them with individual retail prices.
-Code snippetTotal
+
 
 
     Revenue = SUMX(
@@ -55,7 +55,7 @@ Code snippetTotal
     'Transaction_Data'[quantity] * RELATED('Products'[product_price])
 )
 
-4. Total Profit
+3. Total Profit
  Determines net product earnings by taking the gross revenue and subtracting the underlying product wholesale cost.
 
 
@@ -64,14 +64,14 @@ Total Profit = [Total Revenue] - SUMX(
     'Transaction_Data'[quantity] * RELATED('Products'[product_cost])
 )
 
-5. Profit Margin
+4. Profit Margin
 
     Normalizes profitability, allowing direct performance comparison between small local grocery branches and massive regional supermarkets.
 
 
 Profit Margin = DIVIDE([Total Profit], [Total Revenue], 0)
  
-6. Return Rate
+5. Return Rate
 
  Monitors supply chain quality and potential customer dissatisfaction by comparing items returned against total items sold.
  
@@ -94,6 +94,8 @@ By setting automated data thresholds on the Return Rate metric, procurement team
 
 
 Optimized Operational Overhead: Store managers can optimize floor layout and inventory stock based on Transactions by Store Type, ensuring high-demand items are allocated to retail formats that move them fastest.
+
+
 Targeted Regional Expansion: Corporate planners can leverage the geographic performance map to identify lucrative demographic pockets, reducing the financial risk associated with opening new brick-and-mortar storefronts.
 
 
