@@ -42,26 +42,29 @@ To move past basic data aggregation, the model leverages specialized Data Analys
 1. Total Transactions
  Tracks the baseline checkout velocity across all retail locations.
  Code snippetTotal
+
  Transactions = COUNTROWS('Transaction_Data')
 
 2. Total Revenue
  Calculates gross sales revenue by iterating through transactional quantities and matching them with individual retail prices.
 Code snippetTotal
-    Revenue = 
+
+   Revenue = 
 SUMX(
     'Transaction_Data', 
     'Transaction_Data'[quantity] * RELATED('Products'[product_price])
 )
 
-3. Total Profit
+4. Total Profit
  Determines net product earnings by taking the gross revenue and subtracting the underlying product wholesale cost.
 Code snippetTotal Profit = 
-[Total Revenue] - SUMX(
+
+[Total Revenue] = SUMX(
     'Transaction_Data', 
     'Transaction_Data'[quantity] * RELATED('Products'[product_cost])
 )
 
-4. Profit Margin
+5. Profit Margin
 
     Normalizes profitability, allowing direct performance comparison between small local grocery branches and massive regional supermarkets.
 
